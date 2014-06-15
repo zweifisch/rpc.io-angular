@@ -1,0 +1,28 @@
+{
+  "name": "rpc.io-angular",
+  "version": "0.0.0",
+  "description": "[rpc.io](https://github.com/zweifisch/rpc.io)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zf",
+  "license": "MIT",
+  "dependencies": {
+    "too-late": "0.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zweifisch/rpc.io-angular.git"
+  },
+  "keywords": [
+    "rpc.io",
+    "socket.io",
+    "angular"
+  ],
+  "bugs": {
+    "url": "https://github.com/zweifisch/rpc.io-angular/issues"
+  },
+  "homepage": "https://github.com/zweifisch/rpc.io-angular"
+}
