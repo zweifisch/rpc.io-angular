@@ -16,8 +16,15 @@ module.exports = ->
             socket ?= io()
             scope ?= $rootScope
 
-            socket.on 'rpc-result', (id, result, err)->
+            _on = socket.on.bind socket
+
+            _on 'rpc-result', (id, result, err)->
                 calls.deliver id, result: result, err: err
+
+            socket.on = (event, callback)->
+                _on event, (args...)->
+                    scope.$apply ->
+                        callback args...
 
             socket.call = (args...)->
                 if args.length is 3

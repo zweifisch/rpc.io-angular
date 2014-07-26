@@ -19,6 +19,7 @@
       return {
         $get: function($rootScope, $timeout, $q) {
           return function(socket, timeout, scope) {
+            var _on;
             if (timeout == null) {
               timeout = 5000;
             }
@@ -28,12 +29,22 @@
             if (scope == null) {
               scope = $rootScope;
             }
-            socket.on('rpc-result', function(id, result, err) {
+            _on = socket.on.bind(socket);
+            _on('rpc-result', function(id, result, err) {
               return calls.deliver(id, {
                 result: result,
                 err: err
               });
             });
+            socket.on = function(event, callback) {
+              return _on(event, function() {
+                var args;
+                args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+                return scope.$apply(function() {
+                  return callback.apply(null, args);
+                });
+              });
+            };
             socket.call = function() {
               var args, callback, deferred, id, method, params;
               args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
