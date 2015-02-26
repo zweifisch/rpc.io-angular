@@ -1,6 +1,6 @@
 {
   "name": "rpc.io-angular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "[rpc.io](https://github.com/zweifisch/rpc.io)",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "zf",
   "license": "MIT",
   "dependencies": {
-    "too-late": "0.0.2"
+    "too-late": "0.1.1"
   },
   "devDependencies": {},
   "repository": {

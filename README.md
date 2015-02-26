@@ -1,6 +1,6 @@
 # rpc.io agular
 
-[rpc.io](https://github.com/zweifisch/rpc.io)
+usage see [rpc.io](https://github.com/zweifisch/rpc.io)
 
 ```coffeescript
 require('rpc.io-angular')()
