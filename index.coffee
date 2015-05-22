@@ -51,8 +51,8 @@ module.exports = ->
                         callback? err, result
                 .till timeout, ->
                     scope.$apply ->
-                        deferred.reject 'timeout'
-                        callback? 'timeout'
+                        deferred.reject method: method, message:'timeout', params: params, thrower: 'rpc.io-angular'
+                        callback? new Error method: method, message:'timeout', params: params, thrower: 'rpc.io-angular'
                 deferred.promise
 
             socket
